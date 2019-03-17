@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Title from './components/title.jsx';
-import Subtitle from './components/subtitle.jsx';
-import Paragraph from './components/paragraph.jsx';
+import Components from './components';
+
+const { Title, Subtitle, Paragraph } = Components;
 
 class App extends Component {
   constructor(props){
@@ -18,7 +16,7 @@ class App extends Component {
       <div className="App dark">
         <Title text={this.state.name} cursor/>
         <Subtitle text={this.state.job}/>
-        <Paragraph text={this.state.bio} typing/>
+        <Paragraph texts={this.state.bio} typewriter/>
       </div>
     );
   }

@@ -6,17 +6,17 @@ class Paragraph extends Component {
   constructor(props) {
    super(props);
    this.state = {
-     text: props.text,
-     typing: props.typing
+     texts: props.texts,
+     typewriter: props.typewriter ? 'typewriter' : ''
    };
  }
 
   render() {
-    return (
-      <p className={ this.state.typing ? 'typewriter' :'' }>
-        { this.state.text }
+    return this.state.texts.map(text => {
+      return <p className={ this.state.typewriter }>
+        { text }
       </p>
-    );
+    });
   }
 }
 
